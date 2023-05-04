@@ -1,24 +1,109 @@
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+/*responsive grid*/
+.col-1 {
+  width: 8.33%;
 }
-.head1 {
-  position: fixed;
-  padding-right: 350px;
-  padding-top: 175px;
-  right: 0;
-  top: 0;
-  float: right;
-  color: aliceblue;
-  text-align: end;
+.col-2 {
+  width: 16.66%;
 }
-a {
-  text-decoration: none;
-  color: aqua;
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/*content*/
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-image: url("./images/1.jpg");
+}
+.header {
 }
 .nav {
+  padding-right: 150px;
+}
+
+a {
+  float: right;
+  color: aliceblue;
   text-decoration: none;
+  background-color: darkslategray;
+  padding: 10px 15px;
+  margin-left: 35px;
+  margin-top: 25px;
+  border-radius: 50px;
+  border: 2px solid darkslategray;
+}
+a:hover {
+  color: darkslategray;
+  background-color: aliceblue;
+  border: 2px solid darkslategray;
+}
+.hello {
+  text-align: right;
+  color: darkslategrey;
+  padding-right: 120px;
+  float: right;
+}
+.smoke {
+  animation-name: smoke;
+  animation-duration: 5s;
+  animation-play-state: running;
+}
+@keyframes smoke {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
