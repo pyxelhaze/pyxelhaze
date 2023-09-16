@@ -2,24 +2,195 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="javascript" href="script.js" />
+    <script src="script.js" defer></script>
+
     <title>Welcome to pyxelhaze</title>
   </head>
   <body>
-    <div class="header">
-      <div class="col-9 nav">
-        <a href="About me">About me</a>
-        <a href="My work">My work</a>
-        <a href="Kontakt">Kontakt</a>
+    <div class="container">
+      <div class="nav">
+        <button class="link" data-modal-target="#modal-kontakt">Contact</button>
+        <div class="modal" id="modal-kontakt">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-header">
+              <div class="title">Contact</div>
+              <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="messagebox">
+                <!-- <div class="form">
+                  <form id="contact-form" action="/submit-form" method="POST">
+                    <div class="box">
+                      <label for="name">Your name:</label><br />
+                      <input
+                        type="text"
+                        id="name"
+                        placeholder="Your name"
+                      /><br /><br />
+                    </div>
+                    <div class="box">
+                      <label for="email">Your email:</label><br />
+                      <input
+                        type="text"
+                        id="email"
+                        placeholder="Your email"
+                      /><br /><br />
+                    </div>
+                    <div class="message">
+                      <label for="subject">Your Message:</label><br />
+                      <textarea
+                        id="subject"
+                        name="subject"
+                        rows="8"
+                        cols="35"
+                        placeholder="Your Message"
+                      ></textarea>
+                    </div>
+                    <div class="button" id="send">
+                      <input type="submit" value="Send" />
+                    </div>
+                  </form>
+                  
+                </div> -->
+                <div class="email">
+                  Send me an email
+                  <br /><br />
+                  <a
+                    class="two"
+                    href="mailto:thomas@pyxelhaze.com?subject=Hi&amp;body= Hey Thomas,"
+                    target="_blank"
+                  >
+                    thomas@pyxelhaze.com </a
+                  ><br /><br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="link" data-modal-target="#modal-work">Projects</button>
+        <div class="modal" id="modal-work">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-header">
+              <div class="title">Projects</div>
+              <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+              All projects have been developed without the use of any frameworks
+              at their current state. While I do have some initial knowledge in
+              Bootstrap and React, I aim to improve my proficiency in vanilla
+              languages before incorporating frameworks. <br /><br />
+              A brief overview of the showcased projects: Watergardens is a
+              memorial to my past aquariums/aquascapes, Colors is a small
+              minigame, SolarSystem accesses an external API, and the Animal
+              Shelter was originally just a mini-project during my training but
+              evolved into a fairly comprehensive website.
+              <div class="projects">
+                <div class="project1">
+                  <video autoplay muted loop>
+                    <source src="./videos/1.mp4" />
+                    alt="Majestätischer Mops"
+                  </video>
+                  <div class="project-overlay">
+                    <div class="project-overlay-text">
+                      Tollstes Tierheim der Welt
+                    </div>
+                  </div>
+                </div>
+                <div class="project2">
+                  <div class="slideshow">
+                    <img
+                      class="mySlides"
+                      src="./images/Becken_total/02-18.jpg"
+                    />
+                    <img
+                      class="mySlides"
+                      src="./images/Becken_total/02-20.jpg"
+                    />
+                    <img
+                      class="mySlides"
+                      src="./images/Becken_total/06-16.jpg"
+                    />
+                    <img
+                      class="mySlides"
+                      src="./images/Becken_total/09-16.jpg"
+                    />
+                  </div>
+                  <div class="project-overlay">
+                    <div class="project-overlay-text">Watergardens</div>
+                  </div>
+                </div>
+                <div class="project3">
+                  <div class="project-overlay">
+                    <div class="project-overlay-text">Solarsystem</div>
+                  </div>
+                </div>
+                <div class="project4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="link" data-modal-target="#modal-about">About me</button>
+        <div class="modal" id="modal-about">
+          <div class="modal-header">
+            <div class="title">About me</div>
+            <button data-close-button class="close-button">&times;</button>
+          </div>
+          <div class="modal-body">
+            Hello friend, <br /><br />
+            I am Thomas, a late-blooming web/software developer. This is already
+            my third career. I started in the trades and then switched to
+            biotechnology, where I worked in molecular biology research.
+            However, the opportunities for advancement in that field were quite
+            limited, and my hunger to learn was not satisfied. <br /><br />
+            I've been interested in coding for a while, and I am thrilled to
+            have taken the leap for a fresh start. Initially, I began
+            self-studying, but it quickly became clear to me that I wanted to
+            learn it "properly." So, I decided to undergo training with GFN GmbH
+            to become a certified software developer (JavaScript). I learned a
+            lot there and successfully completed the course. <br /><br />This
+            website serves as a portfolio to showcase where my skills lie, and I
+            will continuously update it as I make progress.
+          </div>
+        </div>
       </div>
-      <div class="col-3 hello">
+
+      <div class="hello">
         <h1>Welcome to pyxelhaze</h1>
 
         <h3 class="smoke">Where haze becomes pyxel</h3>
       </div>
     </div>
+
+    <div id="overlay"></div>
   </body>
 </html>

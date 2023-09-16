@@ -1,109 +1,1142 @@
-/*responsive grid*/
-.col-1 {
-  width: 8.33%;
-}
-.col-2 {
-  width: 16.66%;
-}
-.col-3 {
-  width: 25%;
-}
-.col-4 {
-  width: 33.33%;
-}
-.col-5 {
-  width: 41.66%;
-}
-.col-6 {
-  width: 50%;
-}
-.col-7 {
-  width: 58.33%;
-}
-.col-8 {
-  width: 66.66%;
-}
-.col-9 {
-  width: 75%;
-}
-.col-10 {
-  width: 83.33%;
-}
-.col-11 {
-  width: 91.66%;
-}
-.col-12 {
-  width: 100%;
-}
-[class*="col-"] {
-  float: left;
-  padding: 15px;
-}
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-/*content*/
 * {
   box-sizing: border-box;
 }
-html {
-  font-family: Arial, Helvetica, sans-serif;
-}
+html,
 body {
-  background-image: url("./images/1.jpg");
-}
-.header {
-}
-.nav {
-  padding-right: 150px;
-}
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
 
-a {
-  float: right;
-  color: aliceblue;
-  text-decoration: none;
-  background-color: darkslategray;
-  padding: 10px 15px;
-  margin-left: 35px;
-  margin-top: 25px;
-  border-radius: 50px;
-  border: 2px solid darkslategray;
-}
-a:hover {
-  color: darkslategray;
-  background-color: aliceblue;
-  border: 2px solid darkslategray;
+  font-family: 'Chakra Petch', sans-serif;
 }
 .hello {
-  text-align: right;
-  color: darkslategrey;
-  padding-right: 120px;
-  float: right;
+  font-family: 'Chakra Petch', sans-serif;
 }
+.link {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+/* Extra small devices (phones, 650px and down) */
+@media only screen and (max-width: 650px) {
+  body {
+    background-image: url('./images/1.jpg');
+    background-size: auto;
+  }
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .hello {
+    text-align: right;
+    padding-right: 25px;
+    padding-top: 5px;
+    float: right;
+    font-size: 4vw;
+  }
+  .nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+  .link {
+    color: aliceblue;
+    font-size: 3.5vw;
+    text-decoration: none;
+    background-color: rgba(47, 79, 79, 0.76);
+    padding: 10px 15px;
+    margin-top: 13px;
+    border-radius: 50px;
+    border: 2px solid darkslategray;
+  }
+  /* modals */
+
+  .modal {
+    color: rgb(255, 255, 255);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 2px solid darkslategray;
+    border-radius: 10px;
+    z-index: 10;
+    backdrop-filter: blur(35px);
+    width: 500px;
+    max-width: 90%;
+    max-height: 75%;
+    overflow: auto;
+  }
+
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .modal-header {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid darkslategray;
+  }
+
+  .modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  .modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .modal-body {
+    padding: 20px 30px;
+  }
+
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* projects */
+
+  #modal-work {
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    border: 2px solid darkslategray;
+    width: 90%;
+    height: 35vw;
+    margin-top: 15px;
+    border-radius: 5px;
+    position: relative;
+  }
+  .project1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4vw;
+  }
+  .project2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 5vw;
+  }
+  .project3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 4vw;
+  }
+  video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100%;
+    object-fit: fill; /* Video wird in den Container passend skaliert */
+  }
+  .project2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slideshow {
+    width: 100%; /* Oder eine bestimmte Breite, je nach Bedarf */
+    height: 100%; /* Oder eine bestimmte Höhe, je nach Bedarf */
+    overflow: hidden; /* Bilder außerhalb der Box ausblenden */
+  }
+
+  .mySlides {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bilder werden gestreckt, um die gesamte Box auszufüllen */
+  }
+  .project3 {
+    background-image: url('./images/thumbnails/sunsystem.jpg');
+    background-size: cover;
+  }
+  .project-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100%;
+
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #000000;
+  }
+  .project-overlay-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    padding: 40px;
+  }
+  .project1:hover .project-overlay,
+  .project2:hover .project-overlay,
+  .project3:hover .project-overlay,
+  .project4:hover .project-overlay {
+    height: 100%;
+    opacity: 0.75;
+  }
+
+  /* messagebox */
+
+  .messagebox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .two {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 650px and up) */
+@media only screen and (min-width: 650px) {
+  body {
+    background-image: url('./images/1_160.jpg');
+    background-size: auto;
+  }
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .hello {
+    text-align: right;
+    padding-right: 25px;
+    padding-top: 5px;
+    float: right;
+    font-size: 3vw;
+    /* border: solid 1px red; */
+  }
+  .nav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+  .link {
+    font-size: 2.5vw;
+    color: aliceblue;
+    text-decoration: none;
+    background-color: rgba(47, 79, 79, 0.76);
+    padding: 10px 15px;
+    margin-top: 13px;
+    border-radius: 50px;
+    border: 2px solid darkslategray;
+  }
+  /* modals */
+
+  .modal {
+    color: rgb(255, 255, 255);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 2px solid darkslategray;
+    border-radius: 10px;
+    z-index: 10;
+    backdrop-filter: blur(35px);
+    width: 500px;
+    max-width: 90%;
+    max-height: 75%;
+    overflow: auto;
+  }
+
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .modal-header {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid darkslategray;
+  }
+
+  .modal-header .title {
+    font-size: 4vw;
+    font-weight: bold;
+  }
+
+  .modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .modal-body {
+    padding: 20px 30px;
+    font-size: 3vw;
+  }
+
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* projects */
+
+  #modal-work {
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    border: 2px solid darkslategray;
+    width: 90%;
+    height: 35vw;
+    margin-top: 15px;
+    border-radius: 5px;
+    position: relative;
+  }
+  .project1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4vw;
+  }
+  .project2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 5vw;
+  }
+  .project3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 4vw;
+  }
+  video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  .project2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slideshow {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .mySlides {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bilder werden gestreckt, um die gesamte Box auszufüllen */
+  }
+  .project3 {
+    background-image: url('./images/thumbnails/sunsystem.jpg');
+    background-size: cover;
+  }
+  .project-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100%;
+
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #000000;
+  }
+  .project-overlay-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    padding: 40px;
+  }
+  .project1:hover .project-overlay,
+  .project2:hover .project-overlay,
+  .project3:hover .project-overlay,
+  .project4:hover .project-overlay {
+    height: 100%;
+    opacity: 0.75;
+  }
+  /* messagebox */
+
+  .messagebox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .two {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+    background-image: url('./images/1_160.jpg');
+    background-size: auto;
+  }
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .hello {
+    text-align: right;
+    padding-right: 25px;
+    padding-top: 5px;
+    float: right;
+    font-size: 3vw;
+    /* border: solid 1px red; */
+  }
+  .nav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+  .link {
+    font-size: 2.5vw;
+    color: aliceblue;
+    text-decoration: none;
+    background-color: rgba(47, 79, 79, 0.76);
+    padding: 10px 15px;
+    margin-top: 13px;
+    border-radius: 50px;
+    border: 2px solid darkslategray;
+  }
+  /* modals */
+
+  .modal {
+    color: rgb(255, 255, 255);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 2px solid darkslategray;
+    border-radius: 10px;
+    z-index: 10;
+    backdrop-filter: blur(35px);
+    width: 600px;
+    max-width: 90%;
+    max-height: 75%;
+    overflow: auto;
+  }
+
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .modal-header {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid darkslategray;
+  }
+
+  .modal-header .title {
+    font-size: 4vw;
+    font-weight: bold;
+  }
+
+  .modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .modal-body {
+    padding: 20px 30px;
+    font-size: 3vw;
+  }
+
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* projects */
+
+  #modal-work {
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    border: 2px solid darkslategray;
+    width: 90%;
+    height: 35vw;
+    margin-top: 15px;
+    border-radius: 5px;
+    position: relative;
+  }
+  .project1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4vw;
+  }
+  .project2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 5vw;
+  }
+  .project3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 4vw;
+  }
+  video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  .project2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slideshow {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .mySlides {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bilder werden gestreckt, um die gesamte Box auszufüllen */
+  }
+  .project3 {
+    background-image: url('./images/thumbnails/sunsystem.jpg');
+    background-size: cover;
+  }
+  .project-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100%;
+
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #000000;
+  }
+  .project-overlay-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    padding: 40px;
+  }
+  .project1:hover .project-overlay,
+  .project2:hover .project-overlay,
+  .project3:hover .project-overlay,
+  .project4:hover .project-overlay {
+    height: 100%;
+    opacity: 0.75;
+  }
+  /* messagebox */
+
+  .messagebox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .two {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+/* middle devices (middle laptops and desktops, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+  body {
+    background-image: url('./images/1.jpg');
+    background-size: auto;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hello {
+    text-align: right;
+    padding-right: 25px;
+    padding-top: 5px;
+    float: right;
+    font-size: 1.6vw;
+    /* border: solid 1px red; */
+  }
+  .nav {
+    width: 40%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+  .link {
+    font-size: 1.5vw;
+    color: aliceblue;
+    text-decoration: none;
+    background-color: rgba(47, 79, 79, 0.76);
+    padding: 10px 15px;
+    margin-top: 13px;
+    border-radius: 50px;
+    border: 2px solid darkslategray;
+  }
+  /* modals */
+
+  .modal {
+    color: rgb(255, 255, 255);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 2px solid darkslategray;
+    border-radius: 10px;
+    z-index: 10;
+    backdrop-filter: blur(35px);
+    width: 900px;
+    max-width: 90%;
+    max-height: 75%;
+    overflow: auto;
+  }
+
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .modal-header {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid darkslategray;
+  }
+
+  .modal-header .title {
+    font-size: 2vw;
+    font-weight: bold;
+  }
+
+  .modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .modal-body {
+    padding: 20px 30px;
+    font-size: 1.5vw;
+  }
+
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  #modal-about {
+    width: 50%;
+  }
+  #modal-kontakt {
+    width: 30%;
+  }
+  /* projects */
+
+  #modal-work {
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    border: 2px solid darkslategray;
+    width: 90%;
+    height: 35vw;
+    margin-top: 15px;
+    border-radius: 5px;
+    position: relative;
+  }
+  .project1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4vw;
+  }
+  .project2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 5vw;
+  }
+  .project3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 4vw;
+  }
+  video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    overflow: hidden;
+  }
+  .project2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slideshow {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .mySlides {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bilder werden gestreckt, um die gesamte Box auszufüllen */
+  }
+  .project3 {
+    background-image: url('./images/thumbnails/sunsystem.jpg');
+    background-size: cover;
+  }
+  .project-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #000000;
+  }
+  .project-overlay-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    padding: 40px;
+  }
+  .project1:hover .project-overlay,
+  .project2:hover .project-overlay,
+  .project3:hover .project-overlay,
+  .project4:hover .project-overlay {
+    height: 100%;
+    opacity: 0.75;
+  }
+  /* messagebox */
+
+  .messagebox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .two {
+    color: white;
+    text-decoration: underline;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {
+    background-image: url('./images/1.jpg');
+    background-size: auto;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hello {
+    text-align: right;
+    padding-right: 75px;
+    padding-top: 5px;
+    float: right;
+    font-size: 1.1vw;
+    /* border: solid 1px red; */
+  }
+  .nav {
+    width: 30%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+  .link {
+    font-size: 1vw;
+    color: aliceblue;
+    text-decoration: none;
+    background-color: rgba(47, 79, 79, 0.76);
+    padding: 10px 15px;
+    margin-top: 13px;
+    border-radius: 50px;
+    border: 2px solid darkslategray;
+  }
+  .link:hover {
+    background-color: rgba(47, 79, 79, 0.233);
+    color: darkslategray;
+    cursor: pointer;
+  }
+  /* modals */
+
+  .modal {
+    color: rgb(255, 255, 255);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 2px solid darkslategray;
+    border-radius: 10px;
+    z-index: 10;
+    backdrop-filter: blur(35px);
+  }
+
+  #modal-about {
+    width: 50%;
+  }
+  #modal-kontakt {
+    width: 30%;
+  }
+
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .modal-header {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid darkslategray;
+  }
+
+  .modal-header .title {
+    font-size: 1.5vw;
+    font-weight: bold;
+  }
+
+  .modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .modal-body {
+    padding: 20px 30px;
+    font-size: 1vw;
+  }
+
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* projects */
+
+  #modal-work {
+    display: flex;
+    justify-content: center;
+    width: 65%;
+    max-width: 90%;
+    max-height: 75%;
+    overflow: auto;
+  }
+
+  .projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    border: 2px solid darkslategray;
+    max-width: 85%;
+    max-height: 25vw;
+    margin-top: 15px;
+    border-radius: 5px;
+    position: relative;
+  }
+  .project1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3vw;
+  }
+  .project2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 4vw;
+  }
+  .project3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3vw;
+  }
+  video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  .project2 {
+  }
+
+  .slideshow {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .mySlides {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bilder werden gestreckt, um die gesamte Box auszufüllen */
+  }
+  .project3 {
+    background-image: url('./images/thumbnails/sunsystem.jpg');
+    background-size: cover;
+  }
+  .project-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #000000;
+  }
+  .project-overlay-text {
+    color: #ffffff;
+    padding: 40px;
+  }
+  .project1:hover .project-overlay,
+  .project2:hover .project-overlay,
+  .project3:hover .project-overlay,
+  .project4:hover .project-overlay {
+    height: 100%;
+    opacity: 0.75;
+  }
+  /* scrollbar */
+  .modal::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .modal::-webkit-scrollbar-thumb {
+    background-color: #ffffff48;
+    border-radius: 6px;
+  }
+
+  .modal::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffff; /* Farbe des Scrollbalken-Griffs bei Hover */
+  }
+
+  /* Anpassen des horizontalen Scrollbalkens (optional) */
+  .modal::-webkit-scrollbar-track {
+    background: transparent; /* Hintergrundfarbe des Scrollbalken-Tracks */
+  }
+
+  .modal::-webkit-scrollbar-track:hover {
+    background: transparent; /* Hintergrundfarbe des Scrollbalken-Tracks bei Hover */
+  }
+  /* messagebox */
+
+  .messagebox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .two {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+h1 {
+  color: darkslategrey;
+}
+
 .smoke {
-  animation-name: smoke;
-  animation-duration: 5s;
-  animation-play-state: running;
+  background: linear-gradient(
+    to right,
+    rgba(47, 79, 79, 0.082) 20%,
+    darkslategrey 40%,
+    darkslategrey 60%,
+    rgba(47, 79, 79, 0.082) 80%
+  );
+  background-size: 200% auto;
+
+  color: #000;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: smoke 15s linear infinite;
 }
 @keyframes smoke {
-  0% {
-    opacity: 1;
-  }
-  20% {
-    opacity: 0.7;
-  }
-  40% {
-    opacity: 0.5;
-  }
-  60% {
-    opacity: 0.5;
-  }
-  80% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 1;
+  to {
+    background-position: 200% center;
   }
 }
